@@ -24,6 +24,7 @@ npm run build
 nft print .next/server/pages/api/hello.js
 ```
 
+You will see, that `prisma/generated/client/query-engine-debian-openssl-1.1.x` etc is not part of this anymore.
 The file that has the annotation that should fix this, is `prisma/generated/client/index.js`,
 which is being bundled into `.next/server/pages/api/hello.js`.
 
