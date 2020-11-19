@@ -8,10 +8,8 @@ export default async (req, res) => {
     const users = await prisma.user.findMany()
     res.status(200).json(users)
   } catch (e) {
-    let msg = e.stack 
-    const index = fs.readFileSync(path.join(process.cwd(), 'prisma/generated/client/index.js'), 'utf-8')
+    path.join(process.cwd(), 'prisma/generated/client/index.js')
 
-    res.status(200).send(msg/* + '\n' + index*/)
-
+    res.status(200).send(e.stack)
   }
 }
